@@ -1,0 +1,35 @@
+<div>
+
+    <input type="hidden" id="defaulttype_for_save" name="" value="{{details.type}}">
+    <input type="hidden" id="viewall_for_save" name="" value="{{details.viewall}}">
+
+    <ul class="types-selector">
+    {{#selector.items}}
+        {{> local_quizpreset/selector_item}}
+    {{/selector.items}}
+    </ul>
+    <div class="selector-type-description">{{selector.activeDescribe}}</div>
+
+    {{#details.enablegardes}}
+
+        {{#details.userexposure}}
+            <div class="mdl-align">
+                <a id="quiz-grade-button" href="javascript:void(0);" class="btn btn-secondary">
+                    {{# str }} buttondisablegrades, local_quizpreset {{/ str }}
+                </a>
+                <input id="quiz-grade" type="hidden" name="userexposure" value="1">
+            </div>
+        {{/details.userexposure}}
+
+        {{^details.userexposure}}
+            <div class="mdl-align">
+                <a id="quiz-grade-button" href="javascript:void(0);" class="btn btn-primary">
+                    {{# str }} buttonenablegrades, local_quizpreset {{/ str }}
+                </a>
+                <input id="quiz-grade" type="hidden" name="userexposure" value="0">
+            </div>
+        {{/details.userexposure}}
+
+    {{/details.enablegardes}}
+
+</div>

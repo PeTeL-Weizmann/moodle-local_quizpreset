@@ -1,0 +1,15 @@
+{{#details.url_viewall}}
+    <div class="quiz-bottom-bar">
+        <a  class="btn btn-primary quiz-view-all" href="{{details.url_viewall}}">
+
+            {{#details.viewall}}
+                {{# str }} buttonviewcustom, local_quizpreset {{/ str }}
+            {{/details.viewall}}
+
+            {{^details.viewall}}
+                {{# str }} buttonviewall, local_quizpreset {{/ str }}
+            {{/details.viewall}}
+
+        </a>
+    </div>
+{{/details.url_viewall}}
