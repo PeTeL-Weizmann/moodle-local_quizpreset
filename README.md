@@ -1,4 +1,4 @@
-# Shared Geogebra Moodle plugin #
+# Local Quizpreset Moodle plugin #
 
 Version 3.7+ release 1 - 2020.10.01
 
