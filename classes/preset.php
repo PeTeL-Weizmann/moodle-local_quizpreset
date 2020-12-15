@@ -29,7 +29,6 @@ class preset {
     public static $instancename;
 
     public function __construct() {
-        $this->instancename = 'physics';
     }
 
     public static function init() {
@@ -220,6 +219,9 @@ class preset {
 
     public static function fill_settings() {
         self::init();
+        $config = get_config('local_quizpreset');
+        //if (!isset($config->numberoftypes) or $config->numberoftypes == 0) { // No default settings.
+        if (1) { // No default settings.
 
             $customtypes = new \custom_types_default(self::$instancename);
             $alltypes = $customtypes->get_types();
@@ -276,5 +278,6 @@ class preset {
             set_config('numberoftypes', $count, 'local_quizpreset');
             set_config('defaultsettings', '', 'local_quizpreset');
 
+        }
     }
 }

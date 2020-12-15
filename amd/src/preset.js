@@ -94,10 +94,13 @@ define([
     var preconfigurePage = function(response) {
         // Hide Expand all.
         $(Selector.BUTTON_EXPAND).hide();
-        Templates.render("local_quizpreset/view_all_button", response)
-        .done(function (html) {
-            $(Selector.BUTTON_VIEWALL_ANCOR).before(html);
-        });
+
+        if(response.details.viewall_button_enable == 1) {
+            Templates.render("local_quizpreset/view_all_button", response)
+                .done(function (html) {
+                    $(Selector.BUTTON_VIEWALL_ANCOR).before(html);
+                });
+        }
 
         // Hide save buttons and add event for custom save buttons.
         var newSubmit = $(Selector.BUTTON_SUBMIT).clone().insertAfter(Selector.BUTTON_SUBMIT);

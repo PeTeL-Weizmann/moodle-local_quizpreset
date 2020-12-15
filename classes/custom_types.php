@@ -52,6 +52,7 @@ class custom_types {
     private $cmid;
     private $pagestate;
     private $viewall;
+    private $viewall_button_enable;
     private $ifchangestate;
     private $urlparams;
 
@@ -155,6 +156,14 @@ class custom_types {
         $variable = 'quizpreset_'.$this->type;
         $preset = json_decode($config->$variable);
 
+        // If adjustments disabled.
+        if(!$config->enableadjustments) {
+            $this->viewall = 1;
+            $this->viewall_button_enable = false;
+        }else{
+            $this->viewall_button_enable = true;
+        }
+
         // Prepare url.
         $viewall = ($this->viewall == 1) ? 0 : 1;
 
@@ -178,7 +187,7 @@ class custom_types {
                 break;
         }
 
-        // If POST
+        // If POST.
         if(empty($this->urlparams)){
             $url = false;
         }
@@ -224,6 +233,7 @@ class custom_types {
                 'instancename' => '',
                 'ifchangestate' => $this->ifchangestate,
                 'viewall' => $this->viewall,
+                'viewall_button_enable' => $this->viewall_button_enable,
                 'url_viewall' => $url,
                 'enablegardes' => $enablegardes,
                 'userexposure' => $userexposure,

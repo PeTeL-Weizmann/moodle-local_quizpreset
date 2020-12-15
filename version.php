@@ -26,6 +26,6 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'local_quizpreset';
 $plugin->release = '0.1.0';
-$plugin->version = 2019072718;
+$plugin->version = 2019072719;
 $plugin->requires = 2018120300;
 $plugin->maturity = MATURITY_ALPHA;

@@ -41,6 +41,13 @@ if ($hassiteconfig) {
     $choices = array_combine(range(1, $numtypes), array_map(function($n) { return new lang_string('quiztype_title', 'local_quizpreset', $n); }, range(1, $numtypes)));
     $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
 
+    $name = 'local_quizpreset/enableadjustments';
+    $title = get_string('enableadjustments', 'local_quizpreset');
+    $description = get_string('enableadjustmentsdesc', 'local_quizpreset');
+    $default = 1;
+    $choices = array(0 => get_string('no'), 1 => get_string('yes'));
+    $settings->add(new admin_setting_configselect($name, $title, $description, $default, $choices));
+
     $name = 'local_quizpreset/numberoftypes';
     $title = get_string('numberoftypes', 'local_quizpreset');
     $description = get_string('numberoftypesdesc', 'local_quizpreset');
